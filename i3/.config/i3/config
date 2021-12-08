@@ -31,13 +31,14 @@ bindsym $mod+Shift+2 move container to workspace  $ws2
 bindsym $mod+w exec /usr/bin/google-chrome-stable
 assign [class="Google-chrome"] $ws2
 for_window [class=Google-chrome] focus
+for_window [class=Google-chrome] fullscreen enable
 exec --no-startup-id sleep 7 && Google-chrome
 
 	#Workspace 3: File manager
 set $ws3 "3"
 bindsym $mod+3    workspace  $ws3
 bindsym $mod+Shift+3    move container to workspace  $ws3
-#bindsym $mod+r exec "/usr/bin/alacritty --class ranger,ranger -e ranger"
+bindsym $mod+r exec "/usr/bin/alacritty --class ranger,ranger -e ranger"
 assign [instance="ranger"] $ws3
 for_window [instance="ranger"]focus
 
@@ -56,7 +57,12 @@ for_window [instance="neomutt"]focus
 set $ws5 "5"
 bindsym $mod+5    workspace  $ws5
 bindsym $mod+Shift+5    move container to workspace  $ws5
-bindsym $mod+y workspace $ws5; exec /home/morten/.config/i3/scripts/runscripts/music.sh
+bindsym $mod+y exec /home/morten/.config/i3/scripts/runscripts/i3-restoremusic.sh 
+assign [instance="spt"] $ws5
+assign [instance="pulsemixer"] $ws5
+assign [instance="cava"] $ws5
+for_window [instance="spt"] focus
+
 	#Workspace 6:
 set $ws6 "6"
 bindsym $mod+6    workspace  $ws6
@@ -447,5 +453,5 @@ for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 1200 700
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] border pixel 5
-exec_always --no-startup-id /usr/bin/alacritty --class dropdown
+exec --no-startup-id /usr/bin/alacritty --class dropdown
 bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
