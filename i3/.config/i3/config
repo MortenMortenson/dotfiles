@@ -5,7 +5,7 @@
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Noto Sans Regular 10
+font pango:mononoki Nerd Fonts 10
 
 # set the mod key to the winkey:
 set $mod Mod4
@@ -91,13 +91,6 @@ set $ws10 "10"
 bindsym $mod+0    workspace  $ws10
 bindsym $mod+Shift+0    move container to workspace  $ws10
 
-
-
-
-
-
-
-
 #####################
 # workspace layout: #
 #####################
@@ -105,12 +98,8 @@ bindsym $mod+Shift+0    move container to workspace  $ws10
 # default i3 tiling mode:
 workspace_layout default
 
-# i3 stacking layout:
-# Each window will be fullscreen and tabbed top to bottom.
 #workspace_layout stacking
 
-# i3 tabbed layout:
-# Each new window will open fullscreen as a tab (left to right)
 #workspace_layout tabbed
 
 ##############################
@@ -118,7 +107,7 @@ workspace_layout default
 ##############################
 
 #border indicator on windows:
-new_window pixel 1
+new_window pixel 3
 
 # thin borders
 # hide_edge_borders both
@@ -208,10 +197,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+n split h
+bindsym $mod+m split h
 
 # split in vertical orientation
-bindsym $mod+m split v
+bindsym $mod+n split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -284,35 +273,16 @@ focus_follows_mouse no
 #get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-# dex execute .desktop files
-# keep in mind that it can cause issues
-# when second to i3 a DE is installed or mixed usage of i3 + xfce4 or GNOME
-# in this cases better disable dex and use manual starting apps using xdg/autostart
-#exec --no-startup-id dex -a -s /etc/xdg/autostart/:~/.config/autostart/
-
 # num lock activated
 #exec --no-startup-id numlockx on
 # configure multiple keyboard layouts and hotkey to switch (Alt+CAPSLOCK in this example)
-#exec --no-startup-id setxkbmap -layout 'us,no' -variant altgr-intl,qwerty -option 'grp:alt_caps_toggle'  
+exec --no-startup-id setxkbmap -layout 'us,no' -variant altgr-intl,qwerty -option 'grp:alt_caps_toggle'  
 
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
 exec --no-startup-id ~/.screenlayout/monitor.sh
 
-# transparency
-# uncomment one of them to be used (picom package is installed per default)
-# options could need changes, related to used GPU and drivers.
-# to find the right setting consult the archwiki or ask at the forum.
-# xcompmgr: https://wiki.archlinux.org/title/Xcompmgr
-#exec --no-startup-id xcompmgr -C -n &
-# or an more specialized config like this:
-#exec --no-startup-id xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
-# or:
-# picom: https://wiki.archlinux.org/title/Picom
 exec_always --no-startup-id picom -CGb
-
-# networkmanager-applet
-exec_always --no-startup-id nm-applet
 
 # set wallpaper
 exec_always --no-startup-id nitrogen --restore
@@ -360,70 +330,7 @@ client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
 client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 
 
-############################################
-# bar settings (input comes from i3blocks) #
-############################################
-#
-# Start i3bar to display a workspace bar
-# (plus the system information i3status finds out, if available)
-#bar {
-#		font pango:Noto Sans Regular 9, FontAwesome 9 9 9 9 9 9 9 9 
-#		status_command i3blocks -c ~/.config/i3/i3blocks.conf
-#	    	position top
-##	    	i3bar_command i3bar --transparency
-## it could be that you have no primary display set: set one (xrandr --output <output> --primary)
-## reference: https://i3wm.org/docs/userguide.html#_tray_output
-#		    tray_output primary
-#		    tray_padding 0
-#
-## When strip_workspace_numbers is set to yes,
-## any workspace that has a name of the form
-## “[n][:][NAME]” will display only the name.
-#strip_workspace_numbers yes
-###strip_workspace_name no
-#
-#		    colors {
-#		    separator          $purple
-#		    background         $darkgrey
-#		    statusline         $white
-##                          		border 		        bg		txt		indicator
-#		focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
-#		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
-#		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
-#		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
-#	}
-#}
-
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-# set output HDMI-0 to the display you want the bar, --transparency can be set.
-# Transparency needs rgba color codes to be used where the last two letters are the transparency factor see here:
-# https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
-# #08052be6 --> e6=90%
-
-# bar {
-#	font pango:Noto Sans Regular 9, FontAwesome 9
-#	status_command i3blocks -c ~/.config/i3/i3blocks-2.conf
-#	i3bar_command i3bar --transparency
-#	output HDMI-0
-#	position bottom
-#
-# When strip_workspace_numbers is set to yes,
-# any workspace that has a name of the form
-# “[n][:][NAME]” will display only the name.
-#strip_workspace_numbers yes
-##strip_workspace_name no
-#
-#	colors {
-#		separator          $purple
-#		background         $darkbluetrans
-#        	statusline         $white
-#					border		bg		txt		indicator
-#		focused_workspace	$lighterblue	$lighterblue	$darkblue	$purple
-#		active_workspace	$lightdblue	$lightdblue	$darkblue	$purple
-#		inactive_workspace	$darkblue	$darkblue	$lightdblue	$purple
-#		urgent_workspace	$urgentred	$urgentred	$white		$purple
-#	}
-#}
 
 #####################################
 # Application menu handled by rofi: #
