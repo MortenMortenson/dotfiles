@@ -282,7 +282,7 @@ exec --no-startup-id setxkbmap -layout 'us,no' -variant altgr-intl,qwerty -optio
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
 exec --no-startup-id ~/.screenlayout/monitor.sh
 
-exec_always --no-startup-id picom -CGb
+exec_always --no-startup-id picom -CGb --experimental-backend
 
 # set wallpaper
 exec_always --no-startup-id nitrogen --restore
@@ -362,3 +362,4 @@ for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] border pixel 5
 exec --no-startup-id /usr/bin/alacritty --class dropdown
 bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+bindsym $mod+Shift+u exec /usr/bin/alacritty --class dropdown
