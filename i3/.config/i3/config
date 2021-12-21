@@ -363,3 +363,6 @@ for_window [instance="dropdown"] border pixel 5
 exec --no-startup-id /usr/bin/alacritty --class dropdown
 bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 bindsym $mod+Shift+u exec /usr/bin/alacritty --class dropdown
+
+# Clipmenu
+bindsym $mod+Shift+V exec clipmenu
