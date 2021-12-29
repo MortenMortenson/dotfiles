@@ -63,10 +63,12 @@ assign [instance="pulsemixer"] $ws5
 assign [instance="cava"] $ws5
 for_window [instance="spt"] focus
 
-	#Workspace 6:
+	#Workspace 6: Games
 set $ws6 "6"
 bindsym $mod+6    workspace  $ws6
 bindsym $mod+Shift+6    move container to workspace  $ws6
+assign [instance="Steam"] $ws6
+for_window [instance="Steam"] focus
 
 	#Workspace 7: Camera
 set $ws7 "7"
@@ -286,7 +288,6 @@ exec_always --no-startup-id picom -CGb --experimental-backend
 
 # set wallpaper
 exec_always --no-startup-id nitrogen --restore
-#exec --no-startup-id feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros_i3.png
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -366,3 +367,6 @@ bindsym $mod+Shift+u exec /usr/bin/alacritty --class dropdown
 
 # Clipmenu
 bindsym $mod+Shift+V exec clipmenu
+
+#Unclutter
+exec --no-startup-id  unclutter
