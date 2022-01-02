@@ -2,7 +2,11 @@
  alsa-utils alsa mixer pulseaudio pulseaudio-bluetooth pulsemixer
 
 #Bluetooth
-bluez bluez-utils  -- sudo systemctl enable bluetooth -- bluetoothctl adapter on, power on, scan on, pair-connect-trust. /etc/bluetooth/main.conf AutoEnable=true FastConnectable = true
+bluez bluez-utils  -- sudo systemctl enable bluetooth -- bluetoothctl adapter on, power on, scan on, pair-connect-trust.
+
+sed -i "#FastConnectable = false/FastConnectable = true/g" /etc/bluetooth/main.conf
+sed -i "#AutoEnable=false/AutoEnable=true/g" /etch/bluetooth/main.conf
+
 
 #Editor
 vim nvim
@@ -13,6 +17,13 @@ nerd-fonts-monokai
 
 #Terminal
 Alacritty theme.sh zsh fzf zsh4human exa 
+
+#zsh
+	#syntax highlighting: cd ~/.config/zsh
+ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+
+
 
 #Backup
 timeshift
@@ -25,6 +36,7 @@ spotifyd spotify-tui mpv cava
 
 #graphics
 nvidia-settings -- xserver display configuration - advanced - force full composition pipeline
+redshift
 #Filemanager
 ranger
 
@@ -32,4 +44,4 @@ ranger
 paru -S google-chrome
 
 #utilities
-stow bpytop flameshot feh
+stow bpytop flameshot feh ueberzeug

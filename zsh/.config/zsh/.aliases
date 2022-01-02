@@ -1,0 +1,10 @@
+# Software
+alias v="vim"
+alias r="ranger"
+
+
+#Commands
+alias ls="exa --icons -a"
+alias mv="mv -i"
+alias rm="rm -i"
+
