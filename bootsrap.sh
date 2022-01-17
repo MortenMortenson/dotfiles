@@ -2,7 +2,7 @@
 sudo pacman -Syu
 
 #system packages
-sudo pacman -S --needed base-devel bluez bluez-utils pulseaudio pulseaudio-bluetooth alsa-utils alsa-mixer git vim stow paru
+sudo pacman -S --needed base-devel bluez bluez-utils pulseaudio pulseaudio-bluetooth alsa-utils git vim stow paru
 
 #Dotfiles
 rm ~/.config/i3/config
