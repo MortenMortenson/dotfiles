@@ -6,9 +6,11 @@ sudo pacman -S --needed base-devel bluez bluez-utils pulseaudio pulseaudio-bluet
 
 #Dotfiles
 rm ~/.config/i3/config
-cd ~
 cd ~/dotfiles
-stow -v *
+stow -v 
 
+#utilis
+sudo pacman -S -needed polybar alacritty rofi unclutter feh ueberzug ranger exa 
 
+yay -S nerd-fonts-mononoki i3-ressurect theme.sh
 
