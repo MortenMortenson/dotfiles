@@ -7,4 +7,4 @@ alias r="ranger"
 alias ls="exa --icons -a"
 alias mv="mv -i"
 alias rm="rm -i"
-
+alias gitall="git add *; git commit -m "div"; git push"

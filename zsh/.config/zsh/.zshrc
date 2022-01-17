@@ -11,42 +11,54 @@ export HISTSIZE=1000
 export SAVEHIST=1000
 
 #Exports
-export EDITOR=vim
-export VISUAL=vim
-export TERM=alacritty
-
+export EDITOR="vim"
+export VISUAL="vim"
+export TERMINAL="alacritty"
+export TERM="xterm-256color"
 
 
 #Alias
 source ~/.config/zsh/.aliases
-source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
+#source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
+
+PROMPT='%F{blue}%1~%f %F{cyan}❯%f '
+
+
+#Git Right Side Prompt:
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+RPROMPT=\$vcs_info_msg_0_
+zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)%r%f'
+zstyle ':vcs_info:*' enable git
 
 #Keybinding
+bindkey -v
 bindkey "^?" backward-delete-char
 bindkey -a '^[[3~' delete-char
-
-#Theme.sh
-if command -v theme.sh > /dev/null; then
-	[ -e ~/.theme_history ] && theme.sh "$(theme.sh -l|tail -n1)"
-
-	# Optional
-
-	# Bind C-o to the last theme.
-	last_theme() {
-		theme.sh "$(theme.sh -l|tail -n2|head -n1)"
-	}
-
-	zle -N last_theme
-	bindkey '^O' last_theme
-
-	alias th='theme.sh -i'
-
-	# Interactively load a light theme
-	alias thl='theme.sh --light -i'
-
-	# Interactively load a dark theme
-	alias thd='theme.sh --dark -i'
-fi
+##Theme.sh
+#if command -v theme.sh > /dev/null; then
+#	[ -e ~/.theme_history ] && theme.sh "$(theme.sh -l|tail -n1)"
+#
+#	# Optional
+#
+#	# Bind C-o to the last theme.
+#	last_theme() {
+#		theme.sh "$(theme.sh -l|tail -n2|head -n1)"
+#	}
+#
+#	zle -N last_theme
+#	bindkey '^O' last_theme
+#
+#	alias th='theme.sh -i'
+#
+#	# Interactively load a light theme
+#	alias thl='theme.sh --light -i'
+#
+#	# Interactively load a dark theme
+#	alias thd='theme.sh --dark -i'
+#fi
 
 #fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

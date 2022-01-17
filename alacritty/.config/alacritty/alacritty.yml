@@ -1,9 +1,10 @@
 #Themes
-#import:
-#    - ~/.config/alacritty/dracula.yml
-# - ~/.config/alacritty/nord.yml
-#  - ~/.config/alacritty/gruvbox.yml
- 
+import:
+  #    - ~/.config/alacritty/dracula.yml
+  # - ~/.config/alacritty/nord.yml
+  #  - ~/.config/alacritty/gruvbox.yml
+  #- ~/.config/alacritty/oceanic-next.yml
+  - ~/.config/alacritty/gruvbox-material-dark-hard.yml
 TERM: alacritty
 
 window:
@@ -301,41 +302,41 @@ font:
   # from `0.0` to `1.0`.
   #thickness: 0.15
 # Live config reload (changes require restart)
-live_config_reload: true
-  #colors:
-  #  # Default colors
-  #  primary:
-  #    background: '#1b2b34'
-  #    foreground: '#d8dee9'
-  #
-  #  # Colors the cursor will use if `custom_cursor_colors` is true
-  #  cursor:
-  #    text: '#1b2b34'
-  #    cursor: '#ffffff'
-  #
-  #  # Normal colors
-  #  normal:
-  #    black: '#343d46'
-  #    red: '#EC5f67'
-  #    green: '#99C794'
-  #    yellow: '#FAC863'
-  #    blue: '#6699cc'
-  #    magenta: '#c594c5'
-  #    cyan: '#5fb3b3'
-  #    white: '#d8dee9'
-  #
-  #  # Bright colors
-  #  bright:
-  #    black: '#343d46'
-  #    red: '#EC5f67'
-  #    green: '#99C794'
-  #    yellow: '#FAC863'
-  #    blue: '#6699cc'
-  #    magenta: '#c594c5'
-  #    cyan: '#5fb3b3'
-  #    white: '#d8dee9'
-  #theme: Oceanic-Next
+live_config_reload: false
 
+#colors:
+#  # Default colors
+#  primary:
+#    background: '#1b2b34'
+#    foreground: '#d8dee9'
+#
+#  # Colors the cursor will use if `custom_cursor_colors` is true
+#  cursor:
+#    text: '#1b2b34'
+#    cursor: '#ffffff'
+#
+#  # Normal colors
+#  normal:
+#    black: '#343d46'
+#    red: '#EC5f67'
+#    green: '#99C794'
+#    yellow: '#FAC863'
+#    blue: '#6699cc'
+#    magenta: '#c594c5'
+#    cyan: '#5fb3b3'
+#    white: '#d8dee9'
+#
+#  # Bright colors
+#  bright:
+#    black: '#343d46'
+#    red: '#EC5f67'
+#    green: '#99C794'
+#    yellow: '#FAC863'
+#    blue: '#6699cc'
+#    magenta: '#c594c5'
+#    cyan: '#5fb3b3'
+#    white: '#d8dee9'
+#theme: Oceanic-Next
 # Shell
 #
 # You can set `shell.program` to the path of your favorite shell, e.g.
@@ -588,6 +589,34 @@ live_config_reload: true
 # - macOS exclusive actions:
 #   - ToggleSimpleFullscreen
 #       Enter fullscreen without occupying another space.
+#       rs:
+#         2   primary:
+#           1     background: '0x1d2021
+#               '
+#               5       foreground: '0xd4be98
+#                   '
+#                     1
+#                       2   normal:
+#                         3     black:   '0x665c54'
+#                           4     red:     '0xea6962'
+#                             5     green:   '0xa9b665'
+#                               6     yellow:  '0xe78a4e'
+#                                 7     blue:    '0x7daea3'
+#                                   8     magenta: '0xd3869b'
+#                                     9     cyan:    '0x89b482'
+#                                      10     white:   '0xdfbf8e'
+#                                       11
+#                                        12   bright:
+#                                         13     black:   '0x928374'
+#                                          14     red:     '0xea6962'
+#                                           15     green:   '0xa9b665'
+#                                            16     yellow:  '0xe3a84e'
+#                                             17     blue:    '0x7daea3'
+#                                              18     magenta: '0xd3869b'
+#                                               19     cyan:    '0x89b482'
+#                                                20     white:   '0xdfbf8e'
+#                                                ~
+#                                                ~
 #
 # - Linux/BSD exclusive actions:
 #
