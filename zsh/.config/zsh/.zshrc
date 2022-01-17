@@ -24,6 +24,7 @@ source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 #Keybinding
 bindkey "^?" backward-delete-char
 bindkey -a '^[[3~' delete-char
+
 #Theme.sh
 if command -v theme.sh > /dev/null; then
 	[ -e ~/.theme_history ] && theme.sh "$(theme.sh -l|tail -n1)"
@@ -52,6 +53,7 @@ fi
 source ~/.config/zsh/fzf-tab/fzf-tab.plugin.zsh
 
 autoload -Uz compinit && compinit 
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 #Autosuggestion
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

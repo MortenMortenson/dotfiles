@@ -2,8 +2,8 @@
 #import:
 #    - ~/.config/alacritty/dracula.yml
 # - ~/.config/alacritty/nord.yml
-#  -  ~/.config/alacritty/gruvbox.yml
-
+#  - ~/.config/alacritty/gruvbox.yml
+ 
 TERM: alacritty
 
 window:
@@ -302,39 +302,39 @@ font:
   #thickness: 0.15
 # Live config reload (changes require restart)
 live_config_reload: true
-colors:
-  # Default colors
-  primary:
-    background: '#1b2b34'
-    foreground: '#d8dee9'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '#1b2b34'
-    cursor: '#ffffff'
-
-  # Normal colors
-  normal:
-    black: '#343d46'
-    red: '#EC5f67'
-    green: '#99C794'
-    yellow: '#FAC863'
-    blue: '#6699cc'
-    magenta: '#c594c5'
-    cyan: '#5fb3b3'
-    white: '#d8dee9'
-
-  # Bright colors
-  bright:
-    black: '#343d46'
-    red: '#EC5f67'
-    green: '#99C794'
-    yellow: '#FAC863'
-    blue: '#6699cc'
-    magenta: '#c594c5'
-    cyan: '#5fb3b3'
-    white: '#d8dee9'
-theme: Oceanic-Next
+  #colors:
+  #  # Default colors
+  #  primary:
+  #    background: '#1b2b34'
+  #    foreground: '#d8dee9'
+  #
+  #  # Colors the cursor will use if `custom_cursor_colors` is true
+  #  cursor:
+  #    text: '#1b2b34'
+  #    cursor: '#ffffff'
+  #
+  #  # Normal colors
+  #  normal:
+  #    black: '#343d46'
+  #    red: '#EC5f67'
+  #    green: '#99C794'
+  #    yellow: '#FAC863'
+  #    blue: '#6699cc'
+  #    magenta: '#c594c5'
+  #    cyan: '#5fb3b3'
+  #    white: '#d8dee9'
+  #
+  #  # Bright colors
+  #  bright:
+  #    black: '#343d46'
+  #    red: '#EC5f67'
+  #    green: '#99C794'
+  #    yellow: '#FAC863'
+  #    blue: '#6699cc'
+  #    magenta: '#c594c5'
+  #    cyan: '#5fb3b3'
+  #    white: '#d8dee9'
+  #theme: Oceanic-Next
 
 # Shell
 #

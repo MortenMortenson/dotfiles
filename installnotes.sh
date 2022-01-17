@@ -7,6 +7,7 @@ bluez bluez-utils  -- sudo systemctl enable bluetooth -- bluetoothctl adapter on
 sed -i "#FastConnectable = false/FastConnectable = true/g" /etc/bluetooth/main.conf
 sed -i "#AutoEnable=false/AutoEnable=true/g" /etch/bluetooth/main.conf
 
+Enable fn-keys https://mikeshade.com/posts/keychron-linux-function-keys/
 
 #Editor
 vim nvim
@@ -16,14 +17,14 @@ nerd-fonts-hack
 nerd-fonts-monokai
 
 #Terminal
-Alacritty theme.sh zsh fzf zsh4human exa 
-
+Alacritty theme.sh zsh fzf exa 
+rofi
 #zsh
 	#syntax highlighting: cd ~/.config/zsh
  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 
-
+powerlevel10k fzf-tab zsh-autosuggestions
 
 #Backup
 timeshift

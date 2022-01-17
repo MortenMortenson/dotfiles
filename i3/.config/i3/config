@@ -109,7 +109,8 @@ workspace_layout default
 ##############################
 
 #border indicator on windows:
-new_window pixel 3
+new_window pixel 1
+
 
 # thin borders
 # hide_edge_borders both
@@ -278,7 +279,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # num lock activated
 #exec --no-startup-id numlockx on
 # configure multiple keyboard layouts and hotkey to switch (Alt+CAPSLOCK in this example)
-exec --no-startup-id setxkbmap -layout 'us,no' -variant altgr-intl,qwerty -option 'grp:alt_caps_toggle'  
+#exec --no-startup-id setxkbmap -layout 'us,no' -variant altgr-intl,qwerty -option 'grp:alt_caps_toggle'  
 
 # start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
@@ -287,7 +288,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 exec_always --no-startup-id picom -CGb --experimental-backend
 
 # set wallpaper
-exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id feh -z --recursive --bg-fill ~/Pictures/wallpapers/*
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -362,3 +363,5 @@ bindsym $mod+Shift+V exec clipmenu
 
 #Unclutter
 exec --no-startup-id  unclutter
+
+exec_always --no-startup-id setxbmap -option caps:escape
