@@ -8,5 +8,7 @@ alias ls="exa --icons -a"
 alias mv="mv -i"
 alias rm="rm -i"
 
+#Folders
+alias dotfiles="cd ~/dotfiles"
 #Git
 alias gitall="git add *; git commit -m "div"; git push"
