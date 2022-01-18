@@ -36,8 +36,7 @@ set listchars=tab:\|\\u202F,trail:\\u202F
 set incsearch
 
 "Plugins
-call plug#begin('~/local/share/nvim/plugged')
-Plug 'morhetz/gruvbox'
+call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
@@ -49,14 +48,17 @@ Plug 'reedes/vim-pencil'
 Plug 'ap/vim-css-color'
 Plug 'preservim/nerdtree'
 Plug 'mhinz/vim-startify'
+Plug 'cocopon/iceberg.vim'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 "Appearance
-set notermguicolors
+set termguicolors
+colorscheme nord
 set background=dark
 let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
 let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
-let g:airline_theme='apprentice'
+let g:airline_theme='nord'
 
 "Keymap
 let mapleader = " "
@@ -69,6 +71,5 @@ nnoremap <leader>2 gt2
 
 "NerdTree
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif

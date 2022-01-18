@@ -256,7 +256,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Redirect sound to headphones
-bindsym $mod+p exec /usr/local/bin/switch-audio-port
+#bindsym $mod+p exec /usr/local/bin/switch-audio-port
 
 ## App shortcuts
 bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
@@ -289,6 +289,7 @@ exec_always --no-startup-id picom -CGb --experimental-backend
 
 # set wallpaper
 exec_always --no-startup-id feh -z --recursive --bg-fill ~/Pictures/wallpapers/*
+bindsym $mod+p exec --no-startup-id "feh -z --recursive --bg-fill ~/Pictures/wallpapers/"
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -353,7 +354,7 @@ bindsym $mod+t exec rofi -show window \
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 1200 700
 for_window [instance="dropdown"] move scratchpad
-for_window [instance="dropdown"] border pixel 5
+for_window [instance="dropdown"] border pixel 4
 exec --no-startup-id /usr/bin/alacritty --class dropdown
 bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 bindsym $mod+Shift+u exec /usr/bin/alacritty --class dropdown
@@ -361,6 +362,8 @@ bindsym $mod+Shift+u exec /usr/bin/alacritty --class dropdown
 #Unclutter
 exec --no-startup-id  unclutter
 
-
+#make caps lock be escape
 exec --no-startup-id xmodmap -e "clear lock" #disable caps lock switch
 exec --no-startup-id xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
+
+

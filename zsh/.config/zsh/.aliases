@@ -1,7 +1,7 @@
 # Software
 alias v="nvim"
 alias r="ranger"
-
+alias vim="nvim"
 
 #Commands
 alias ls="exa --icons -a"
