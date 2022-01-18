@@ -358,10 +358,9 @@ exec --no-startup-id /usr/bin/alacritty --class dropdown
 bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 bindsym $mod+Shift+u exec /usr/bin/alacritty --class dropdown
 
-# Clipmenu
-bindsym $mod+Shift+V exec clipmenu
-
 #Unclutter
 exec --no-startup-id  unclutter
 
-exec_always --no-startup-id setxbmap -option caps:escape
+
+exec --no-startup-id xmodmap -e "clear lock" #disable caps lock switch
+exec --no-startup-id xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape

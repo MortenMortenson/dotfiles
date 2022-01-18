@@ -11,17 +11,17 @@ export HISTSIZE=1000
 export SAVEHIST=1000
 
 #Exports
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 export TERMINAL="alacritty"
 export TERM="xterm-256color"
 
 
 #Alias
 source ~/.config/zsh/.aliases
-#source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
-PROMPT='%F{blue}%1~%f %F{cyan}❯%f '
+#PROMPT='%F{blue}%1~%f %F{cyan}❯%f '
 
 
 #Git Right Side Prompt:
@@ -34,7 +34,6 @@ zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)%r%f'
 zstyle ':vcs_info:*' enable git
 
 #Keybinding
-bindkey -v
 bindkey "^?" backward-delete-char
 bindkey -a '^[[3~' delete-char
 ##Theme.sh
