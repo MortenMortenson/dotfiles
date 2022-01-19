@@ -1,34 +1,24 @@
-#Software needed : google-chrome neomutt ranger alacritty xrandr alsa alsa-mixer mpv 
-#######################
-# config starts here: #
-#######################
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:mononoki Nerd Fonts 10
-
-# set the mod key to the winkey:
 set $mod Mod4
+bindsym $mod+q kill
+font pango:mononoki Nerd Fonts 10
+workspace_layout default
+gaps inner 6
+gaps outer 3
+smart_gaps on
+focus_follows_mouse no
 
 
-#Workspaces
 #Can also add #workspace $ws3 output HDMI-0/VGA-0 to open workspace on certain monitor
 
 	#Workspace 1: Terminal
 set $ws1 "1"
-bindsym $mod+1 workspace $ws1
-bindsym $mod+Shift+1 move container to workspace $ws1
 
-bindsym $mod+Return exec alacritty
 assign [class="Alacritty"] $ws1
 for_window [class=Alacritty] focus
 
 	#Workspace 2: Browser
 set $ws2 "2"
-bindsym $mod+2    workspace  $ws2
-bindsym $mod+Shift+2 move container to workspace  $ws2
-
-bindsym $mod+w exec /usr/bin/google-chrome-stable
 assign [class="Google-chrome"] $ws2
 for_window [class=Google-chrome] focus
 for_window [class=Google-chrome] fullscreen enable
@@ -36,28 +26,16 @@ exec --no-startup-id sleep 7 && Google-chrome
 
 	#Workspace 3: File manager
 set $ws3 "3"
-bindsym $mod+3    workspace  $ws3
-bindsym $mod+Shift+3    move container to workspace  $ws3
-bindsym $mod+r exec "/usr/bin/alacritty --class ranger,ranger -e ranger"
 assign [instance="ranger"] $ws3
 for_window [instance="ranger"]focus
 
-
-
 	#Workspace 4: Mail
 set $ws4 "4"
-bindsym $mod+4    workspace  $ws4
-bindsym $mod+Shift+4    move container to workspace  $ws4
-	
-bindsym $mod+Shift+m exec "/usr/bin/alacritty --class neomutt,neomutt -e neomutt"
 assign [instance="neomutt"] $ws4
 for_window [instance="neomutt"]focus
 
 	#Workspace 5: Music
 set $ws5 "5"
-bindsym $mod+5    workspace  $ws5
-bindsym $mod+Shift+5    move container to workspace  $ws5
-bindsym $mod+y exec /home/morten/.config/i3/scripts/runscripts/i3-restoremusic.sh 
 assign [instance="spt"] $ws5
 assign [instance="pulsemixer"] $ws5
 assign [instance="cava"] $ws5
@@ -65,65 +43,31 @@ for_window [instance="spt"] focus
 
 	#Workspace 6: Games
 set $ws6 "6"
-bindsym $mod+6    workspace  $ws6
-bindsym $mod+Shift+6    move container to workspace  $ws6
 assign [instance="Steam"] $ws6
 for_window [instance="Steam"] focus
 
 	#Workspace 7: Camera
 set $ws7 "7"
-bindsym $mod+7    workspace  $ws7
-bindsym $mod+Shift+7    move container to workspace  $ws7 
-bindsym $mod+b workspace $ws7; exec /home/morten/.config/i3/scripts/runscripts/camera.sh
 assign [title="TP-Link RTSP Server"]  $wsp7
 for_window [title="TP-LINK RTSP Server"] fullscreen enable
 
 	#Workspace 8:
 set $ws8 "8"
-bindsym $mod+8    workspace  $ws8
-bindsym $mod+Shift+8    move container to workspace  $ws8
 
 	#Workspace 9:
 set $ws9 "9"
-bindsym $mod+9    workspace  $ws9
-bindsym $mod+Shift+9    move container to workspace  $ws9
 
 	#Workspace 10:
 set $ws10 "10"
-bindsym $mod+0    workspace  $ws10
-bindsym $mod+Shift+0    move container to workspace  $ws10
 
-#####################
-# workspace layout: #
-#####################
-
-# default i3 tiling mode:
-workspace_layout default
-
-#workspace_layout stacking
-
-#workspace_layout tabbed
-
-##############################
-# extra options for windows: #
-##############################
 
 #border indicator on windows:
 new_window pixel 1
 
 
-# thin borders
-# hide_edge_borders both
-
-# Set inner/outer GAPS
-gaps inner 6
-gaps outer 3
-smart_gaps on
-
 #Enable and disable gaps
 #bindsym $mod+ gaps inner all set 0; gaps outer all set 0
 #bindysm $mod+ gaps inner all set 30; gaps outer all set 10
-# Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # Resizing by 1
@@ -138,7 +82,6 @@ bindsym $mod+Ctrl+Shift+k resize grow height 10 px or 10 ppt
 bindsym $mod+Ctrl+Shift+j resize shrink height 10 px or 10 ppt
 bindsym $mod+Ctrl+Shift+l resize grow width 10 px or 10 ppt
 
-#Resize gaps
 bindsym $mod+Shift+g mode "$mode_gaps"
 
 mode "$mode_gaps" {
@@ -148,65 +91,15 @@ mode "$mode_gaps" {
         bindsym Escape mode "default"
 }
 
-######################################
-# keybindings for different actions: #
-######################################
 
-
-# kill focused window
-bindsym $mod+q kill
-
-# exit-menu
-bindsym $mod+Shift+e exec ~/.config/i3/scripts/powermenu
-
-# Lock the system
 # lock with a picture:
 #bindsym $mod+l exec i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
 # lock by blurring the screen:
 bindsym $mod+x exec ~/.config/i3/scripts/blur-lock
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-
-# restart i3 inplace (preserves your layout/session, can be used to update i3)
-bindsym $mod+Shift+r restart
-
 # Backlight control
 bindsym XF86MonBrightnessUp exec xbacklight +10
 bindsym XF86MonBrightnessDown exec xbacklight -10
-
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
-bindsym $mod+m split h
-
-# split in vertical orientation
-bindsym $mod+n split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -218,14 +111,6 @@ bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# open new empty workspace
-bindsym $mod+Shift+n exec ~/.config/i3/scripts/empty_workspace
-
-## Multimedia Keys
 
 # volume
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
@@ -261,52 +146,21 @@ bindsym XF86AudioPrev exec playerctl previous
 ## App shortcuts
 bindsym Print exec "scrot ~/%Y-%m-%d-%T-screenshot.png"
 
-##########################################
-# configuration for workspace behaviour: #
-##########################################
-
-# Disable focus follow mouse
-focus_follows_mouse no
-
-
-#############################################
-# autostart applications/services on login: #
-#############################################
-
-#get auth work with polkit-gnome
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
 # num lock activated
-#exec --no-startup-id numlockx on
-# configure multiple keyboard layouts and hotkey to switch (Alt+CAPSLOCK in this example)
-#exec --no-startup-id setxkbmap -layout 'us,no' -variant altgr-intl,qwerty -option 'grp:alt_caps_toggle'  
+exec --no-startup-id numlockx on
 
-# start a script to setup displays
 # uncomment the next line, use arandr to setup displays and save the file as monitor:
 exec --no-startup-id ~/.screenlayout/monitor.sh
 
-exec_always --no-startup-id picom -CGb --experimental-backend
 
-# set wallpaper
-exec_always --no-startup-id feh -z --recursive --bg-fill ~/Pictures/wallpapers/*
-bindsym $mod+p exec --no-startup-id "feh -z --recursive --bg-fill ~/Pictures/wallpapers/"
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
 
-# Desktop notifications
-exec_always --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 
 
 # set floating (nontiling)for apps needing it
-for_window [class="Yad" instance="yad"] floating enable
-for_window [class="Galculator" instance="galculator"] floating enable
-
-# set floating (nontiling) for special apps
-for_window [class="Xsane" instance="xsane"] floating enable
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
-for_window [class="qt5ct" instance="qt5ct"] floating enable
-for_window [class="Pamac-manager"] floating enable
 
 ######################################
 # color settings for bar and windows #
@@ -335,20 +189,6 @@ client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-#####################################
-# Application menu handled by rofi: #
-#####################################
-
-## rofi bindings fancy application menu ($mod+d /F9 optional disabled)
-
-bindsym $mod+d exec rofi -modi drun -show drun \
-		-config ~/.config/rofi/rofidmenu.rasi
-
-## rofi bindings for window menu ($mod+t /F10 optional disabled)
-
-bindsym $mod+t exec rofi -show window \
-		-config ~/.config/rofi/rofidmenu.rasi
-
 #  Scratchpads:
 
 for_window [instance="dropdown"] floating enable
@@ -366,4 +206,12 @@ exec --no-startup-id  unclutter
 exec --no-startup-id xmodmap -e "clear lock" #disable caps lock switch
 exec --no-startup-id xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
 
-
+# Desktop notifications
+exec_always --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
+exec_always killall sxhkd && sxhkd &
+# set wallpaper
+exec_always --no-startup-id feh -z --recursive --bg-fill ~/Pictures/wallpapers/*
+#get auth work with polkit-gnome
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#Picom
+exec_always --no-startup-id picom -CGb --experimental-backend

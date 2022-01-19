@@ -1,0 +1,61 @@
+#Programs
+
+super + Return
+    alacritty
+
+super + r 
+    alacritty --class ranger,ranger -e ranger
+
+super + w
+    google-chrome-stable
+
+super + shift + m
+    alacritty --class neomutt,neomutt -e neomutt
+
+super + y
+    ./home/morten/.config/i3/scripts/runscripts/i3-restoremusic.sh
+
+super + b
+     i3-msg workspace 7; exec /home/morten/.config/i3/scripts/runscripts/camera.sh
+
+super + p
+    feh -z --recursive --bg-fill $HOME/Pictures/wallpapers/
+Print 
+    scrot ~/%Y-%m-%d-%T-screenshot.png
+
+
+
+
+
+#I3 
+super + {h,j,k,l}
+    i3-msg focus {left,down,up,right}
+
+super + shift + {h,j,k,l}
+    i3-msg move {left,down,up,right}
+
+super + {m,n}
+    i3-msg split {h,v}
+
+super + f
+    i3-msg fullscreen toggle
+
+super + shift + {r,c}
+    i3-msg {restart,reload}
+
+super + {0,1-9}
+    i3-msg workspace {0,1-9}
+
+super + shift + {0,1-9}
+    i3-msg move container to workspace {0,1-9}
+
+super + shift + e
+    $HOME/.config/i3/scripts/powermenu
+
+#Rofi
+super + d
+    rofi -modi drun -show drun -config ~/.config/rofi/rofidmenu.rasi
+
+super + t
+    rofi -show window -config ~/.config/rofi/rofidmenu.rasi
+

@@ -5,7 +5,6 @@ set nocompatible
 
 "set system clipboard
 set clipboard+=unnamedplus
-
 "History, no swapfile and
 set nobackup
 set noswapfile
