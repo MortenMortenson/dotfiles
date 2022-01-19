@@ -1,5 +1,5 @@
 #Sound:
- alsa-utils alsa mixer pulseaudio pulseaudio-bluetooth pulsemixer
+ alsa-utils alsa mixer pulseaudio pulseaudio-bluetooth pulsemixer pamixer spotify-cli
 
 #Bluetooth
 bluez bluez-utils  -- sudo systemctl enable bluetooth -- bluetoothctl adapter on, power on, scan on, pair-connect-trust.

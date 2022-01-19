@@ -68,4 +68,6 @@ super + t
 #Brightness
 XF86MonBrightness{Down,Up}
     xbacklight {-dec 20%,-inc 20%}
-
+#Volume controls
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+    pamixer {-i 5,-d 5,-t}
