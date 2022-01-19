@@ -46,3 +46,6 @@ paru -S google-chrome
 
 #utilities
 stow bpytop flameshot feh ueberzeug
+
+#set caps to escape
+sed '/Option "XkbLayout" "no"/a \ \ \ \ \ \ \  Option "XkbOptions" "caps:escape"' 00-keyboard.conf.bak

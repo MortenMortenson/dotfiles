@@ -11,53 +11,53 @@ focus_follows_mouse no
 
 #Can also add #workspace $ws3 output HDMI-0/VGA-0 to open workspace on certain monitor
 
-	#Workspace 1: Terminal
+#Workspace 1: Terminal
 set $ws1 "1"
 
 assign [class="Alacritty"] $ws1
 for_window [class=Alacritty] focus
 
-	#Workspace 2: Browser
+#Workspace 2: Browser
 set $ws2 "2"
 assign [class="Google-chrome"] $ws2
 for_window [class=Google-chrome] focus
 for_window [class=Google-chrome] fullscreen enable
 exec --no-startup-id sleep 7 && Google-chrome
 
-	#Workspace 3: File manager
+#Workspace 3: File manager
 set $ws3 "3"
 assign [instance="ranger"] $ws3
 for_window [instance="ranger"]focus
 
-	#Workspace 4: Mail
+#Workspace 4: Mail
 set $ws4 "4"
 assign [instance="neomutt"] $ws4
 for_window [instance="neomutt"]focus
 
-	#Workspace 5: Music
+#Workspace 5: Music
 set $ws5 "5"
 assign [instance="spt"] $ws5
 assign [instance="pulsemixer"] $ws5
 assign [instance="cava"] $ws5
 for_window [instance="spt"] focus
 
-	#Workspace 6: Games
+#Workspace 6: Games
 set $ws6 "6"
 assign [instance="Steam"] $ws6
 for_window [instance="Steam"] focus
 
-	#Workspace 7: Camera
+#Workspace 7: Camera
 set $ws7 "7"
 assign [title="TP-Link RTSP Server"]  $wsp7
 for_window [title="TP-LINK RTSP Server"] fullscreen enable
 
-	#Workspace 8:
+#Workspace 8:
 set $ws8 "8"
 
-	#Workspace 9:
+#Workspace 9:
 set $ws9 "9"
 
-	#Workspace 10:
+#Workspace 10:
 set $ws10 "10"
 
 
@@ -85,8 +85,8 @@ bindsym $mod+Ctrl+Shift+l resize grow width 10 px or 10 ppt
 bindsym $mod+Shift+g mode "$mode_gaps"
 
 mode "$mode_gaps" {
-        bindsym j gaps inner all plus 5; gaps outer all plus 5
-	bindsym k gaps inner all minus 5; gaps outer all minus 5 
+    bindsym j gaps inner all plus 5; gaps outer all plus 5
+        bindsym k gaps inner all minus 5; gaps outer all minus 5 
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
@@ -96,10 +96,6 @@ mode "$mode_gaps" {
 #bindsym $mod+l exec i3lock -i  ~/.config/i3/i3-lock-screen.png -p default|win -t
 # lock by blurring the screen:
 bindsym $mod+x exec ~/.config/i3/scripts/blur-lock
-
-# Backlight control
-bindsym XF86MonBrightnessUp exec xbacklight +10
-bindsym XF86MonBrightnessDown exec xbacklight -10
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -202,13 +198,9 @@ bindsym $mod+Shift+u exec /usr/bin/alacritty --class dropdown
 #Unclutter
 exec --no-startup-id  unclutter
 
-#make caps lock be escape
-exec --no-startup-id xmodmap -e "clear lock" #disable caps lock switch
-exec --no-startup-id xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
-
 # Desktop notifications
 exec_always --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
-exec_always killall sxhkd && sxhkd &
+exec_always ./~/.config/i3/scripts/runscripts/sxhkd.sh
 # set wallpaper
 exec_always --no-startup-id feh -z --recursive --bg-fill ~/Pictures/wallpapers/*
 #get auth work with polkit-gnome

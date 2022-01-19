@@ -1,3 +1,8 @@
+# Reload sxhkdrc
+super + shift + ctrl r
+    pkill -usr1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
+
+
 #Programs
 
 super + Return
@@ -58,4 +63,9 @@ super + d
 
 super + t
     rofi -show window -config ~/.config/rofi/rofidmenu.rasi
+
+
+#Brightness
+XF86MonBrightness{Down,Up}
+    xbacklight {-dec 20%,-inc 20%}
 

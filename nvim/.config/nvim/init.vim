@@ -49,16 +49,24 @@ Plug 'preservim/nerdtree'
 Plug 'mhinz/vim-startify'
 Plug 'cocopon/iceberg.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
+Plug 'mbbill/undotree'
 call plug#end()
 
 "Appearance
 set termguicolors
-colorscheme nord
+colorscheme onenord
 set background=dark
 let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
 let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
-let g:airline_theme='nord'
+let g:airline_theme='nord_minimal'
+set t_Co=256
 
+
+
+
+"---Syntax on no filename
+autocmd BufNewFile,BufRead * if expand('%:t') !~ '\.' | set syntax=bash | endif
 "Keymap
 let mapleader = " "
 nnoremap <leader>g =:Goyo <bar> <CR> 
