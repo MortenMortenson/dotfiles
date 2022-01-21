@@ -61,8 +61,8 @@ set $ws10 "10"
 
 
 #border indicator on windows:
-new_window pixel 1
-
+new_window pixel 0
+for_window [class=".*"] border pixel 0
 
 #Enable and disable gaps
 #bindsym $mod+ gaps inner all set 0; gaps outer all set 0
