@@ -12,6 +12,7 @@ set undodir=~/.vim/undodir
 set undofile
 set history=200
 
+set splitbelow splitright
 "Fix tabs and indent
 set softtabstop=4
 set tabstop=4

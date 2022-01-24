@@ -4,6 +4,7 @@
 #if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
+#source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 #History
 export HISTFILE=~/.config/zsh/.zsh_history
@@ -19,7 +20,6 @@ export TERM="xterm-256color"
 
 #Alias
 source ~/.config/zsh/.aliases
-#source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 PROMPT='%F{blue}%2~%f %F{green}❯%f '
 
@@ -36,31 +36,9 @@ zstyle ':vcs_info:*' enable git
 #Keybinding
 bindkey "^?" backward-delete-char
 bindkey -a '^[[3~' delete-char
-##Theme.sh
-#if command -v theme.sh > /dev/null; then
-#	[ -e ~/.theme_history ] && theme.sh "$(theme.sh -l|tail -n1)"
-#
-#	# Optional
-#
-#	# Bind C-o to the last theme.
-#	last_theme() {
-#		theme.sh "$(theme.sh -l|tail -n2|head -n1)"
-#	}
-#
-#	zle -N last_theme
-#	bindkey '^O' last_theme
-#
-#	alias th='theme.sh -i'
-#
-#	# Interactively load a light theme
-#	alias thl='theme.sh --light -i'
-#
-#	# Interactively load a dark theme
-#	alias thd='theme.sh --dark -i'
-#fi
 
 #fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.config/fzf.zsh ] && source ~/.config/fzf.zsh
 source ~/.config/zsh/fzf-tab/fzf-tab.plugin.zsh
 
 autoload -Uz compinit && compinit 
