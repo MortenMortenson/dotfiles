@@ -36,19 +36,20 @@ super + shift + ctrl r
 super + Return
     alacritty
 
-super + r 
+#super + f 
     alacritty --class ranger,ranger -e ranger
 
-super + shift + r
-    sudo alacritty --class ranger,ranger, -e ranger
+#super + shift + f
+#    sudo alacritty --class ranger,ranger, -e ranger
+
 super + w
     google-chrome-stable
 
 super + shift + m
     alacritty --class neomutt,neomutt -e neomutt
 
-super + y
-    ./home/morten/.config/i3/scripts/runscripts/i3-restoremusic.sh
+#super + y
+#    ./home/morten/.config/i3/scripts/runscripts/i3-restoremusic.sh
 
 super + b
      i3-msg workspace 7; exec /home/morten/.config/i3/scripts/runscripts/camera.sh
@@ -69,6 +70,18 @@ super + {h,j,k,l}
 super + shift + {h,j,k,l}
     i3-msg move {left,down,up,right}
 
+super + ctrl + {l,h}
+    i3-msg resize {shrink, grow} width 10 px or 10 ppt
+
+super + ctrl + {k,j}
+    i3-msg resize {shrink, grow} height 10 px or 10 ppt
+
+super + alt + {k,j}
+    i3-msg gaps outer current {minus,plus} 10
+
+super + alt + {h,l}
+    i3-msg gaps inner current {minus,plus} 10
+
 super + {m,n}
     i3-msg split {h,v}
 
@@ -87,6 +100,9 @@ super + shift + {0,1-9}
 super + shift + e
     $HOME/.config/i3/scripts/powermenu
 
+super + i
+    i3-msg layout toggle splith splitv stacked tabbed 
+
 #Rofi
 super + d
     rofi -modi drun -show drun -config ~/.config/rofi/rofidmenu.rasi
@@ -101,3 +117,8 @@ XF86MonBrightness{Down,Up}
 #Volume controls
 XF86Audio{RaiseVolume,LowerVolume,Mute}
     pamixer {-i 5,-d 5,-t}
+
+#Mediakeys control spotify
+XF86Audio{Play,Next,Prev} 
+    spotifycli --{playpause,next,prev}
+
