@@ -7,7 +7,7 @@ alias vim="nvim"
 alias ls="exa --icons -a"
 alias mv="mv -i"
 alias rm="rm -i"
-
+alias pacup="sudo pacman -Syu;paru -Syu"
 #Folders
 alias dotfiles="cd ~/dotfiles"
 #Git

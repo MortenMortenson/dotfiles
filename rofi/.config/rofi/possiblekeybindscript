@@ -1,0 +1,8 @@
+# show shortcuts
+cat ~/.config/sxhkd/sxhkdrc | awk '/^[a-z]/ && last {print $0,"\t",last} {last=""} /^#/{last=$0}' | column -t -s $'\t' | rofi -dmenu -i -no-show-icons -width 1000
+
+#show calc https://github.com/svenstaro/rofi-calc
+rofi -show calc -modi calc -no-show-match -no-sort
+
+#Bluetooth
+https://github.com/nickclyde/rofi-bluetooth

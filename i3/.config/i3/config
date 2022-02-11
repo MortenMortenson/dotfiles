@@ -93,7 +93,7 @@ exec --no-startup-id xset s 480 dpms 600 600 600
 
 # set floating (nontiling)for apps needing it
 for_window [class="Pavucontrol" instance="pavucontrol"] floating enable
-
+for_window [instance="pia-client"] floating enable
 ######################################
 # color settings for bar and windows #
 ######################################
@@ -129,8 +129,14 @@ for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] border pixel 4
 exec --no-startup-id /usr/bin/alacritty --class dropdown
 bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
+bindsym $mod+Shift+b [title="TP-LINK RTSP Server"] scratchpad show; [title="TP-LINK RTSP Server"] resize set 400 400; [title="TP-LINK RTSP Server"] move position 80 ppt 0 ppt
 bindsym $mod+Shift+u exec /usr/bin/alacritty --class dropdown
 
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show; move position center
 # Desktop notifications
 exec_always --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 #get auth work with polkit-gnome
