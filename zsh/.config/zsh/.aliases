@@ -1,10 +1,10 @@
 # Software
 alias v="nvim"
 alias r="ranger"
-alias vim="nvim"
 
 #Commands
 alias ls="exa --icons -a"
+alias lsc="clear && ls"
 alias mv="mv -i"
 alias rm="rm -i"
 alias pacup="sudo pacman -Syu;paru -Syu"

@@ -41,17 +41,20 @@ padding-left = 0
 padding-right = 2
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
 #font-0 = San Fransisco Nerd Font:pixelsize=12;2 
 font-0 = mononoki Nerd Font:pixelsize=11;2
 
+separator = "|"
+separator-padding = 0
+;modules-left = i3 
 modules-left = i3 
-modules-center = date 
-modules-right = bluetooth arch-aur-updates audio shot wallpaper redshift cpu memory filesystem 
+modules-right = arch-aur-updates audio shot wallpaper redshift cpu memory filesystem 
+modules-center = date
 
-#tray-position = right
-tray-padding = 2
+tray-position = right
+;tray-padding = 8
 ;tray-background = #0063ff
 
 ;wm-restack = i3
@@ -63,6 +66,37 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+;[bar/bar2]
+;bottom = true
+;width = 100%
+;height = 27
+;radius = 0.0
+;fixed-center = true
+;
+;background = ${colors.background2}
+;foreground = ${colors.foreground}
+;
+;line-size = 3
+;line-color = #f00
+;
+;border-size = 0
+;border-color = #00000000
+;
+;padding-left = 0
+;padding-right = 2
+;
+;module-margin-left = 1
+;module-margin-right = 2
+;
+;font-0 = mononoki Nerd Font:pixelsize=11;2
+;
+;;modules-left = i3 
+;modules-center = arch-aur-updates audio shot wallpaper redshift cpu memory filesystem 
+;;modules-right = bluetooth arch-aur-updates audio shot wallpaper redshift cpu memory filesystem 
+;
+;cursor-click = pointer
+;cursor-scroll = ns-resize
 
 
 [settings]

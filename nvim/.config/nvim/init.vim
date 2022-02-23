@@ -38,6 +38,8 @@ set incsearch
 call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 "Writing tools
 Plug 'junegunn/goyo.vim'
@@ -47,6 +49,9 @@ Plug 'vimwiki/vimwiki'
 Plug 'airblade/vim-gitgutter'
 Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown'}
 
+"Syntax highlighting
+Plug 'mboughaba/i3config.vim'
+
 "Appearance
 Plug 'arcticicestudio/nord-vim'
 Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
@@ -54,7 +59,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ap/vim-css-color'
 Plug 'preservim/nerdtree'
-Plug 'mhinz/vim-startify'
+"Plug 'mhinz/vim-startify'
+Plug 'glepnir/dashboard-nvim'
 Plug 'mbbill/undotree'
 Plug 'tmsvg/pear-tree'
 Plug 'tpope/vim-commentary'
@@ -76,7 +82,6 @@ let mapleader = " "
 nnoremap <leader>g =:Goyo <bar> <CR>
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
-nnoremap s <Nop>
 nnoremap <leader>t :tabnew<CR>
 nnoremap <leader>w :tabclose<CR>
 nnoremap <leader>1 gt1 
@@ -92,8 +97,8 @@ nnoremap <right> <nop>
 set splitbelow splitright
 
 "Open split 
-nnoremap <leader>n :vsplit<CR>
-nnoremap <leader>m :split<CR>
+nnoremap <leader>m :vsplit<CR>
+nnoremap <leader>n :split<CR>
 
 " Remap splits navigation to just CTRL + hjkl
 nnoremap <C-h> <C-w>h
@@ -128,3 +133,26 @@ let g:instant_markdown_autostart = 0
 nnoremap <C-t> :NERDTreeToggle<CR>
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+map <leader>md :InstantMarkdownPreview<CR>
+
+"Vimwiki
+let g:vimwiki_list = [{'path': '~/Documents/wiki/',
+                       \ 'syntax': 'markdown', 'ext': '.md'}]
+
+" Show syntax highlighting groups for word under cursor
+nmap <F2> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+map <leader>h :set statusline=%{synIDattr(synIDtrans(synID(line('.'),col('.'),1)),'name')}<CR>
+
+"Ultisnips folder
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
+
+"Dashboard
+let g:dashboard_default_executive ='fzf'
+
+inoremap ii <esc>

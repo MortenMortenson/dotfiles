@@ -143,3 +143,23 @@ exec_always --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #Picom
 exec_always --no-startup-id picom --experimental-backends -b
+
+# Scratchpads
+for_window [instance="scratchpad"] move window to scratchpad, scratchpad show
+
+bindsym Mod1+s exec --no-startup-id alacritty --class scratchpad
+bindsym Mod1+h exec --no-startup-id alacritty --class scratchpad -e btop
+bindsym Mod1+v exec ~/.config/i3/scripts/runscripts/run
+
+bindsym Mod1+n scratchpad show
+
+
+
+
+
+
+
+
+
+
+# vim: filetype=i3config
