@@ -1,0 +1,3 @@
+sxhkd &
+feh -z --recursive --bg-fill ~/Pictures/wallpapers
+unclutter &
