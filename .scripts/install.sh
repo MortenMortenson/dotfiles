@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 #update and install packages 
 sudo pacman -Syu
