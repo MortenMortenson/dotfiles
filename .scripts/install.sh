@@ -8,8 +8,7 @@ sudo pacman -S --needed base-devel pulseaudio pulseaudio-bluetooth alsa-mixer sn
 #systemd
 sudo systemctl enable bluetooth
 
-# clone repo
-sudo git clone https://github.com/MortenMortenson/dotfiles.git
+# stow
 rm -rf ~/.config/i3
 cd dotfiles
 stow -v
