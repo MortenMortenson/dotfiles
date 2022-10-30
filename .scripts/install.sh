@@ -9,6 +9,6 @@ sudo pacman -S --needed base-devel pulseaudio pulseaudio-bluetooth alsa-mixer sn
 sudo systemctl enable bluetooth
 
 # stow
-rm -rf ~/.config/i3
-cd ~/dotfiles
-stow -v
+#rm -rf ~/.config/i3
+#cd ~/dotfiles
+#stow -v
