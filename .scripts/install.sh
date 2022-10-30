@@ -11,4 +11,4 @@ sudo systemctl enable bluetooth
 # stow
 rm -rf ~/.config/i3
 cd ~/dotfiles
-stow -v
+stow *
