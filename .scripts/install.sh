@@ -2,7 +2,7 @@
 
 #update and install packages 
 sudo pacman -Syu
-sudo pacman -S --needed --noconfirm base-devel pulseaudio pulseaudio-bluetooth snapper alsa-utils neovim unclutter exa bat ranger pcmanfm alacritty firefox feh ueberzug sxhkd dunst rofi polybar pulsemixer git zsh nitrogen arandr stow bpytop bluez bluez-utils cups 
+sudo pacman -S --needed --noconfirm base-devel pulseaudio pulseaudio-bluetooth snapper alsa-utils picom neovim unclutter exa bat ranger pcmanfm alacritty firefox feh ueberzug sxhkd dunst rofi polybar pulsemixer git zsh nitrogen arandr stow bpytop bluez bluez-utils cups 
 
 #install yay
 #cd /opt
@@ -11,7 +11,7 @@ sudo pacman -S --needed --noconfirm base-devel pulseaudio pulseaudio-bluetooth s
 #makepkg -si
 
 #install from aur
-#yay -s google-chrome
+#yay -S --noconfirm google-chrome i3-ressurect 
 
 #systemd
 sudo systemctl enable bluetooth
