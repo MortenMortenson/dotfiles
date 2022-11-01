@@ -18,7 +18,7 @@ yay -S nerd-fonts-mononoki i3-ressurect theme.sh
 #setup zsh
 cd ~/.config/zsh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+git clone https://github.com/zsh-users/zsh-autosuggestions
 
 #Setup bluetooth
 sed -i "#FastConnectable = false/FastConnectable = true/g" /etc/bluetooth/main.conf
