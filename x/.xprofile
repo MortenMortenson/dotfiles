@@ -1,3 +1,4 @@
 sxhkd &
 feh -z --recursive --bg-fill ~/Pictures/wallpapers
 unclutter &
+xrandr -s 1920x1080 &
