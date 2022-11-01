@@ -5,7 +5,13 @@ sudo pacman -Syu
 sudo pacman -S --needed base-devel pulseaudio pulseaudio-bluetooth snapper alsa-utils neovim unclutter exa bat ranger pcmanfm alacritty firefox feh ueberzug sxhkd dunst rofi polybar pulsemixer git zsh nitrogen arandr stow bpytop bluez bluez-utils cups 
 
 #install yay
+#cd /opt
+#git clone https://aur.archlinux.org/yay.git
+#cd /opt/yay
+#makepkg -si
 
+#install from aur
+#yay -s google-chrome
 
 #systemd
 sudo systemctl enable bluetooth
@@ -16,6 +22,9 @@ rm -rf ~/.config/i3
 cd ~/dotfiles
 stow *
 
+#install fonts
+sudo cp ~/.fonts/* /usr/share/fonts
+fc-cache -v /usr/share/fonts
 
 #----------Configurations---------#
 
