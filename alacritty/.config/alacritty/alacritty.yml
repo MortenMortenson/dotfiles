@@ -3,7 +3,7 @@ import:
   #    - ~/.config/alacritty/dracula.yml
   # - ~/.config/alacritty/nord.yml
   #  - ~/.config/alacritty/gruvbox.yml
-  - ~/.config/alacritty/onenord.yml
+  # ~/.config/alacritty/onenord.yml
   #- ~/.config/alacritty/oceanic-next.yml
   #- ~/.config/alacritty/gruvbox-material-dark-hard.yml
   #- ~/.config/alacritty/iceberg.yml
