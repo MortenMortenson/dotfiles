@@ -23,6 +23,8 @@ source ~/.config/zsh/.aliases
 
 PROMPT='%F{blue}%2~%f %F{green}❯%f '
 
+#Pywal
+(cat ~/.cache/wal/sequences &)
 
 #Git Right Side Prompt:
 autoload -Uz vcs_info
