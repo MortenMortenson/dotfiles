@@ -23,7 +23,7 @@ mount -o compress=zstd:1,noatime,subvol=@home /dev/$rootdisk /mnt/home
 mount -o compress=zstd:1,noatime,subvol=@snapshots /dev/$rootdisk /mnt/.snapshots
 mount -o compress=zstd:1,noatime,subvol=@cache /dev/$rootdisk /mnt/var/cache
 mount -o compress=zstd:1,noatime,subvol=@log /dev/$rootdisk /mnt/var/log
-mount -o compress=zstd:1,noatime,subvol=@images /dev/$rootdisk /mnt/var/lib/libvrt/images
+mount -o compress=zstd:1,noatime,subvol=@images /dev/$rootdisk /mnt/var/lib/libvirt/images
 mount /dev/$bootdisk /mnt/boot
 pacstrap /mnt base vim reflector git
 genfstab -U /mnt >> /mnt/etc/fstab
