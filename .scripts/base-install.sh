@@ -25,5 +25,6 @@ mount -o compress=zstd:1,noatime,subvol=@cache /dev/$rootdisk /mnt/var/cache
 mount -o compress=zstd:1,noatime,subvol=@log /dev/$rootdisk /mnt/var/log
 mount -o compress=zstd:1,noatime,subvol=@images /dev/$rootdisk /mnt/var/lib/libvirt/images
 mount /dev/$bootdisk /mnt/boot
+pacman -S --noconfirm archlinux-keyring
 pacstrap /mnt base vim reflector git
 genfstab -U /mnt >> /mnt/etc/fstab
