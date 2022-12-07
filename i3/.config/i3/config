@@ -142,7 +142,7 @@ exec_always --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 #get auth work with polkit-gnome
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #Picom
-exec_always --no-startup-id picom --experimental-backends -b
+exec_always --no-startup-id picom 
 
 # Scratchpads
 for_window [instance="scratchpad"] move window to scratchpad, scratchpad show

@@ -13,4 +13,4 @@ alias dotfiles="cd ~/dotfiles"
 #Git
 alias gitall="git add *; git commit -m "div"; git push"
 #pywal
-alias wal="wal -qi ~/Downloads"
+alias wal="wal -qi ~/Pictures/wallpapers"

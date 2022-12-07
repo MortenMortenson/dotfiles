@@ -40,8 +40,8 @@ bindkey "^?" backward-delete-char
 bindkey -a '^[[3~' delete-char
 
 #fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source ~/.config/zsh/fzf-tab/fzf-tab.plugin.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#source ~/.config/zsh/fzf-tab/fzf-tab.plugin.zsh
 #export FZF_DEFAULT_OPTS="
 #--layout=reverse
 #--info=inline
