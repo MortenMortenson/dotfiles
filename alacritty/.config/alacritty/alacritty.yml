@@ -1,5 +1,5 @@
 #Themes
-import:
+#import:
   #    - ~/.config/alacritty/dracula.yml
   # - ~/.config/alacritty/nord.yml
   #  - ~/.config/alacritty/gruvbox.yml
