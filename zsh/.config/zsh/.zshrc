@@ -21,7 +21,7 @@ export TERM="xterm-256color"
 #Alias
 source ~/.config/zsh/.aliases
 
-PROMPT='%F{blue}%2~%f %F{green}❯%f '
+PROMPT='%F{blue}%2~%f %F{green}%f '
 
 #Pywal
 (cat ~/.cache/wal/sequences &)

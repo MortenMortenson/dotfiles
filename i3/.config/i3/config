@@ -3,9 +3,9 @@ set $mod Mod4
 bindsym $mod+q kill
 font pango:mononokiNerd Fonts 10
 workspace_layout default
-#gaps inner 6
-#gaps outer 3
-#smart_gaps on
+gaps inner 6
+gaps outer 3
+smart_gaps on
 focus_follows_mouse no
 
 #Can also add #workspace $ws3 output HDMI-0/VGA-0 to open workspace on certain monitor
