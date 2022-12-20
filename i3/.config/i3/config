@@ -1,7 +1,7 @@
 
 set $mod Mod4
 bindsym $mod+q kill
-font pango:mononokiNerd Fonts 10
+font pango:mononokiNerd Fonts 9
 workspace_layout default
 gaps inner 6
 gaps outer 3

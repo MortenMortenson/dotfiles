@@ -8,6 +8,7 @@ alias lsc="clear && ls"
 alias mv="mv -i"
 alias rm="rm -i"
 alias pacup="sudo pacman -Syu;paru -Syu"
+
 #Folders
 alias dotfiles="cd ~/dotfiles"
 #Git

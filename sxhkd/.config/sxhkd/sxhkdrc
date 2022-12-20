@@ -34,8 +34,7 @@ super + shift + ctrl r
 #Programs
 
 super + Return
-    alacritty
-
+    ./scripts/alacrittyfontfix.sh
 #super + f 
     alacritty --class ranger,ranger -e ranger
 

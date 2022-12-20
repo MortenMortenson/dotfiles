@@ -1,4 +1,4 @@
-setxkbmap -layout no
+setxkbmap -layout no -variant nodeadkeys -option caps:escape
 sxhkd &
 wal -R
 unclutter &
